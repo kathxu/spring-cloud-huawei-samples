@@ -9,10 +9,12 @@ spring:
         appName: basic-application
         serviceName: ${spring.application.name}
         # 注册中心地址，本示例使用ServiceStage环境变量。建议保留这种配置方式，部署的时候，不用手工修改地址。
-        address: ${PAAS_CSE_SC_ENDPOINT:http://127.0.0.1:30100}
+        #address: ${PAAS_CSE_SC_ENDPOINT:http://127.0.0.1:30100}
+        address: https://192.168.0.27:30100,https://192.168.0.76:30100
         # 微服务版本号，本示例使用ServiceStage环境变量。建议保留这种配置方式，部署的时候，不用手工修改版本号，防止契约注册失败。
         version: ${CAS_INSTANCE_VERSION:0.0.1}
       config:
         # 配置中心地址，本示例使用ServiceStage环境变量。建议保留这种配置方式，部署的时候，不用手工修改地址。
-        serverAddr: ${PAAS_CSE_CC_ENDPOINT:http://127.0.0.1:30110}
+        #serverAddr: ${PAAS_CSE_CC_ENDPOINT:http://127.0.0.1:30110}
+        serverAddr: https://192.168.0.27:30103,https://192.168.0.76:30103
         serverType: kie
